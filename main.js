@@ -1,7 +1,27 @@
-let input = "I have to lock in!";    //My random phrase
+let input = "Does this work?";
 
-const vowels = ["a", "e", "i", "o", "u"];   //Whale only vowels
+let vowels = ["a", "e", "i", "o", "u"];
 
-let resultArray = [];   //will store the vowels from the input string
+let returnArr = [];
 
-//loop that goes through the Input var text
+// looping through input
+for (let i = 0; i < input.length; i++) {
+    let inputIndex = input[i]
+    // console.log(inputIndex)
+    
+    // looping through vowels
+    for (let j = 0; j < vowels.length; j++) {
+        let vowelsIndex = vowels[j]
+        // console.log(vowelsIndex)
+
+        if (inputIndex === vowelsIndex) {
+            if (inputIndex === "e" || inputIndex === "u") {
+                returnArr.push(inputIndex, vowelsIndex)
+            } else {
+                returnArr.push(inputIndex)
+            }
+        }
+    }
+}
+
+console.log(returnArr.join("").toLowerCase());
